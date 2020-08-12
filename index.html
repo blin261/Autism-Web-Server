@@ -1,0 +1,36 @@
+!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Autism</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>Predict Autism</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('result')}}"method="post">
+    	  <input type="text" name="ses" placeholder="Social Economic Status"/>
+        <input type="text" name="pagediff" placeholder="Parental Age Difference"/>
+        <input type="text" name="father_drug_1" placeholder="Father Drug 1"/>
+        <input type="text" name="father_drug_2" placeholder="Father Drug 2"/>
+        <input type="text" name="father_drug_3" placeholder="Father Drug 3"/>
+        <input type="text" name="father_drug_4" placeholder="Father Drug 4"/>
+        <input type="text" name="father_drug_5" placeholder="Father Drug 5"/>
+        <input type="text" name="mother_drug_1" placeholder="Mother Drug 1"/>
+        <input type="text" name="mother_drug_2" placeholder="Mother Drug 2"/>
+        <input type="text" name="mother_drug_3" placeholder="Mother Drug 3"/>
+        <input type="text" name="mother_drug_4" placeholder="Mother Drug 4"/>
+        <input type="text" name="mother_drug_5" placeholder="Mother Drug 5"/>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Autism</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction }}
+
+ </div>
+</body>
+</html>
